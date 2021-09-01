@@ -1,0 +1,12 @@
+package com.microservice.currencyconversionservice;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="netflix-zuul-api-gateway-server")
+public interface CurrencyExchangeServiceProxy {
+
+	@GetMapping(value="/currency-exchange-service")
+	public String getCurrencyExchangeRate();
+	
+}

@@ -1,0 +1,10 @@
+package com.microservice.currencyconversionservice;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public interface CurrencyExchangeServiceProxy {
+
+	@GetMapping(value="/currency-exchange-service")
+	public String getCurrencyExchangeRate();
+	
+}
